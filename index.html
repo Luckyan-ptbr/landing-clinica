@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitalle Odontologia — Cuidado com seu sorriso, sem espera</title>
+<meta name="description" content="Clínica odontológica em Barretos-SP. Agende sua consulta em poucos cliques, com atendimento humanizado e convênios aceitos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-deep:#123B52;
+    --blue-mid:#2F6E8E;
+    --blue-soft:#6FA8C4;
+    --sky-a:#2F80ED;
+    --sky-b:#5FD0F3;
+    --bg:#FFFFFF;
+    --bg-soft:#F3F8FA;
+    --bg-soft-2:#EAF3F6;
+    --ink:#0E2432;
+    --ink-muted:#5A7787;
+    --line:#DCE7EC;
+    --white:#FFFFFF;
+    --radius-lg:22px;
+    --radius-md:14px;
+    --radius-sm:8px;
+    --shadow-soft:0 20px 45px -25px rgba(18,59,82,0.35);
+    --shadow-card:0 12px 28px -18px rgba(18,59,82,0.28);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  .grad-text{
+    background:linear-gradient(100deg,var(--blue-deep) 10%,var(--sky-a) 55%,var(--sky-b) 95%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,0.82);
+    backdrop-filter:blur(14px) saturate(160%);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 32px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .logo{
+    font-family:'Fraunces',serif;
+    font-size:22px;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color:var(--blue-deep);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .logo svg{width:26px;height:26px;flex:none;}
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:34px;
+  }
+  .nav-links a{
+    font-size:14.5px;
+    font-weight:500;
+    color:var(--ink-muted);
+    transition:color .2s ease;
+    position:relative;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:-6px;
+    width:0%; height:1.5px;
+    background:var(--sky-a);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover{color:var(--blue-deep);}
+  .nav-links a:hover::after{width:100%;}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:999px;
+    font-size:14.5px;
+    font-weight:600;
+    cursor:pointer;
+    border:none;
+    transition:transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease, background .22s ease;
+  }
+  .btn-primary{
+    background:linear-gradient(100deg,var(--blue-deep),var(--blue-mid) 60%,var(--sky-a));
+    color:#fff;
+    box-shadow:0 10px 24px -10px rgba(47,110,142,0.55);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(47,110,142,0.65);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--blue-deep);
+    border:1.5px solid var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--blue-mid);background:var(--bg-soft);}
+
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .nav-toggle{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 110px;
+    background:
+      radial-gradient(900px 480px at 82% -10%, rgba(95,208,243,0.16), transparent 60%),
+      radial-gradient(700px 420px at -5% 20%, rgba(47,128,237,0.08), transparent 55%),
+      var(--bg);
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:64px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--blue-mid);
+    background:var(--bg-soft-2);
+    border:1px solid var(--line);
+    padding:7px 14px;
+    border-radius:999px;
+    margin-bottom:26px;
+  }
+  .eyebrow .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--sky-a);
+    box-shadow:0 0 0 3px rgba(47,128,237,0.18);
+  }
+  .hero h1{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(36px,4.6vw,58px);
+    line-height:1.06;
+    letter-spacing:-0.015em;
+    color:var(--blue-deep);
+    margin-bottom:22px;
+  }
+  .hero p.lead{
+    font-size:18px;
+    color:var(--ink-muted);
+    max-width:490px;
+    margin-bottom:34px;
+  }
+  .hero-actions{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:38px;
+    flex-wrap:wrap;
+  }
+  .hero-actions .btn-primary{padding:15px 28px;font-size:15.5px;}
+  .link-inline{
+    font-size:14.5px;
+    font-weight:600;
+    color:var(--blue-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    border-bottom:1.5px solid transparent;
+    transition:border-color .2s ease, gap .2s ease;
+  }
+  .link-inline:hover{border-color:var(--blue-deep); gap:10px;}
+
+  .hero-trust{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    padding-top:26px;
+    border-top:1px solid var(--line);
+    max-width:520px;
+  }
+  .hero-trust .stars{color:#F5A623;font-size:15px;letter-spacing:2px;}
+  .hero-trust small{display:block;color:var(--ink-muted);font-size:13px;margin-top:3px;}
+  .hero-trust strong{font-size:14.5px;color:var(--ink);}
+
+  /* Signature: appointment widget card */
+  .appointment-card{
+    position:relative;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:28px 26px 26px;
+    box-shadow:var(--shadow-soft);
+    max-width:400px;
+    margin-left:auto;
+    animation:floatIn .8s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes floatIn{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .appointment-card::before{
+    content:"";
+    position:absolute;
+    inset:-1px;
+    border-radius:inherit;
+    padding:1px;
+    background:linear-gradient(140deg, rgba(47,128,237,0.35), rgba(255,255,255,0), rgba(95,208,243,0.35));
+    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    pointer-events:none;
+  }
+  .apt-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:18px;
+  }
+  .apt-head p{
+    font-size:13px;
+    color:var(--ink-muted);
+    font-weight:500;
+  }
+  .apt-head .tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    color:#1E8A5F;
+    background:#E7F6EE;
+    padding:5px 10px;
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .apt-head .tag::before{content:"";width:6px;height:6px;border-radius:50%;background:#1E8A5F;}
+  .apt-service{
+    font-family:'Fraunces',serif;
+    font-size:20px;
+    font-weight:600;
+    color:var(--blue-deep);
+    margin-bottom:20px;
+  }
+  .apt-days{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .apt-day{
+    text-align:center;
+    padding:10px 4px;
+    border-radius:10px;
+    border:1px solid var(--line);
+    font-family:'IBM Plex Mono',monospace;
+    cursor:pointer;
+    transition:all .2s ease;
+  }
+  .apt-day span{display:block;font-size:10.5px;color:var(--ink-muted);text-transform:uppercase;}
+  .apt-day strong{display:block;font-size:15px;margin-top:3px;color:var(--ink);}
+  .apt-day:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+  .apt-day.active{
+    background:linear-gradient(120deg,var(--blue-deep),var(--blue-mid));
+    border-color:transparent;
+  }
+  .apt-day.active span,.apt-day.active strong{color:#fff;}
+
+  .apt-times{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-bottom:22px;
+  }
+  .apt-time{
+    text-align:center;
+    padding:9px 4px;
+    border-radius:8px;
+    border:1px solid var(--line);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--ink-muted);
+    cursor:pointer;
+    transition:all .2s ease;
+  }
+  .apt-time:hover{border-color:var(--sky-a);color:var(--blue-deep);}
+  .apt-time.selected{
+    background:var(--bg-soft-2);
+    border-color:var(--sky-a);
+    color:var(--blue-deep);
+    font-weight:600;
+  }
+  .apt-card-cta{
+    width:100%;
+    justify-content:center;
+    padding:14px;
+  }
+
+  /* ---------- TRUST BAR ---------- */
+  .trustbar{
+    background:var(--blue-deep);
+    padding:26px 0;
+  }
+  .trustbar .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+  }
+  .trust-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#EAF3F6;
+  }
+  .trust-item svg{width:20px;height:20px;flex:none;opacity:.85;}
+  .trust-item span{font-size:13.5px;font-weight:500;letter-spacing:.01em;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:100px 0;}
+  .section-head{
+    max-width:620px;
+    margin-bottom:56px;
+  }
+  .section-eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--blue-mid);
+    margin-bottom:14px;
+    display:block;
+  }
+  .section-head h2{
+    font-family:'Fraunces',serif;
+    font-size:clamp(28px,3.2vw,40px);
+    font-weight:600;
+    color:var(--blue-deep);
+    line-height:1.15;
+    letter-spacing:-0.01em;
+    margin-bottom:16px;
+  }
+  .section-head p{
+    color:var(--ink-muted);
+    font-size:16.5px;
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--bg-soft);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .service-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:30px 26px;
+    transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease, border-color .25s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .service-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-card);
+    border-color:transparent;
+  }
+  .service-card .icon{
+    width:46px;height:46px;
+    border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--bg-soft-2),#DDEEF4);
+    margin-bottom:20px;
+  }
+  .service-card .icon svg{width:22px;height:22px;color:var(--blue-mid);}
+  .service-card h3{
+    font-family:'Fraunces',serif;
+    font-size:18.5px;
+    font-weight:600;
+    margin-bottom:10px;
+    color:var(--ink);
+  }
+  .service-card p{
+    font-size:14.5px;
+    color:var(--ink-muted);
+    margin-bottom:16px;
+  }
+  .service-card .price-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    color:var(--blue-mid);
+  }
+
+  /* ---------- WHY / STATS SPLIT ---------- */
+  .why{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:70px;
+    align-items:center;
+  }
+  .why-media{
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow-card);
+    position:relative;
+  }
+  .why-media img{width:100%;height:520px;object-fit:cover;}
+  .why-media .floater{
+    position:absolute;
+    bottom:20px;left:20px;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(8px);
+    border-radius:14px;
+    padding:16px 18px;
+    box-shadow:0 10px 22px -12px rgba(18,59,82,.4);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    max-width:230px;
+  }
+  .why-media .floater .num{
+    font-family:'Fraunces',serif;
+    font-size:24px;
+    font-weight:700;
+    color:var(--blue-deep);
+  }
+  .why-media .floater .txt{font-size:12px;color:var(--ink-muted);line-height:1.3;}
+
+  .why-list{display:flex;flex-direction:column;gap:26px;}
+  .why-item{display:flex;gap:18px;}
+  .why-item .idx{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--blue-mid);
+    background:var(--bg-soft-2);
+    width:36px;height:36px;
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    flex:none;
+  }
+  .why-item h4{
+    font-size:16.5px;
+    font-weight:600;
+    margin-bottom:6px;
+    color:var(--ink);
+  }
+  .why-item p{font-size:14.5px;color:var(--ink-muted);}
+
+  /* ---------- PROCESS (jornada do paciente) ---------- */
+  .process{background:var(--bg-soft);}
+  .process-track{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+  }
+  .process-track::before{
+    content:"";
+    position:absolute;
+    top:23px; left:6%; right:6%;
+    height:1.5px;
+    background:repeating-linear-gradient(90deg,var(--line) 0 8px, transparent 8px 16px);
+    z-index:0;
+  }
+  .process-step{position:relative;z-index:1;}
+  .process-num{
+    width:46px;height:46px;
+    border-radius:50%;
+    background:var(--white);
+    border:1.5px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:14px;
+    color:var(--blue-deep);
+    font-weight:600;
+    margin-bottom:18px;
+    transition:all .25s ease;
+  }
+  .process-step:hover .process-num{
+    background:linear-gradient(120deg,var(--blue-deep),var(--sky-a));
+    color:#fff;
+    border-color:transparent;
+    transform:scale(1.08);
+  }
+  .process-step h4{font-size:16px;font-weight:600;margin-bottom:8px;}
+  .process-step p{font-size:14px;color:var(--ink-muted);}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .testi-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:28px 26px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-card);}
+  .testi-stars{color:#F5A623;font-size:14px;margin-bottom:14px;letter-spacing:2px;}
+  .testi-card p{font-size:14.5px;color:var(--ink);margin-bottom:20px;line-height:1.65;}
+  .testi-person{display:flex;align-items:center;gap:12px;}
+  .testi-avatar{
+    width:38px;height:38px;border-radius:50%;
+    background:linear-gradient(135deg,var(--blue-mid),var(--sky-b));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-family:'Fraunces',serif;font-weight:600;font-size:14px;
+  }
+  .testi-person strong{display:block;font-size:13.5px;}
+  .testi-person span{display:block;font-size:12px;color:var(--ink-muted);}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--bg-soft);}
+  .faq-list{max-width:760px;margin:0 auto;}
+  details{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:22px 26px;
+    margin-bottom:14px;
+    transition:border-color .2s ease;
+  }
+  details[open]{border-color:var(--blue-mid);}
+  summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:15.5px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary .plus{
+    width:22px;height:22px;flex:none;
+    border-radius:50%;
+    border:1.5px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;
+    color:var(--blue-mid);
+    transition:transform .25s ease;
+  }
+  details[open] summary .plus{transform:rotate(45deg);border-color:var(--blue-mid);}
+  details p{
+    font-size:14.5px;
+    color:var(--ink-muted);
+    margin-top:14px;
+    line-height:1.7;
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    background:linear-gradient(120deg,var(--blue-deep) 0%,var(--blue-mid) 55%, #2E8FB8 100%);
+    padding:90px 0;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .final-cta::before{
+    content:"";
+    position:absolute;
+    width:600px;height:600px;
+    background:radial-gradient(circle,rgba(255,255,255,0.14),transparent 70%);
+    top:-260px;right:-160px;
+  }
+  .final-cta h2{
+    font-family:'Fraunces',serif;
+    font-size:clamp(28px,3.6vw,42px);
+    color:#fff;
+    font-weight:600;
+    margin-bottom:16px;
+    position:relative;
+  }
+  .final-cta p{
+    color:rgba(255,255,255,0.82);
+    max-width:480px;
+    margin:0 auto 34px;
+    position:relative;
+  }
+  .final-cta .btn-primary{
+    background:#fff;
+    color:var(--blue-deep);
+    box-shadow:0 14px 30px -12px rgba(0,0,0,0.35);
+    padding:16px 32px;
+    font-size:15.5px;
+    position:relative;
+  }
+  .final-cta .btn-primary:hover{transform:translateY(-3px);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:#0E2432;
+    color:#B9CBD4;
+    padding:64px 0 30px;
+  }
+  .foot-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1.2fr;
+    gap:40px;
+    margin-bottom:50px;
+  }
+  .foot-logo{
+    font-family:'Fraunces',serif;
+    font-size:20px;
+    font-weight:600;
+    color:#fff;
+    margin-bottom:14px;
+    display:block;
+  }
+  footer .foot-desc{font-size:13.5px;line-height:1.7;max-width:260px;}
+  footer h5{
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:#7C97A3;
+    margin-bottom:16px;
+  }
+  footer ul li{margin-bottom:10px;}
+  footer ul li a{font-size:13.5px;transition:color .2s ease;}
+  footer ul li a:hover{color:#fff;}
+  .foot-map{
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.1);
+  }
+  .foot-map iframe{width:100%;height:150px;border:0;filter:grayscale(0.3) contrast(1.05);}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,0.08);
+    padding-top:26px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:12.5px;
+    color:#7C97A3;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .appointment-card{margin:0 auto;}
+    .why{grid-template-columns:1fr;}
+    .why-media img{height:380px;}
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+    .process-track{grid-template-columns:repeat(2,1fr); row-gap:36px;}
+    .process-track::before{display:none;}
+    .testi-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 20px;}
+    .nav-links{display:none;}
+    .service-grid{grid-template-columns:1fr;}
+    .hero{padding:56px 0 70px;}
+    section{padding:70px 0;}
+    .trustbar .wrap{justify-content:flex-start;}
+    .foot-grid{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  :focus-visible{
+    outline:2.5px solid var(--sky-a);
+    outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C9 2 6.5 4.2 6.5 7.5c0 2 .8 3.2 1.6 4.4.7 1 1.4 2 1.4 3.6V19a2.5 2.5 0 0 0 5 0v-3.5c0-1.6.7-2.6 1.4-3.6.8-1.2 1.6-2.4 1.6-4.4C17.5 4.2 15 2 12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 11.5c.6.6 1.6 1 2.5 1s1.9-.4 2.5-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      Vitalle Odontologia
+    </a>
+    <div class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre a clínica</a>
+      <a href="#jornada">Como funciona</a>
+      <a href="#duvidas">Dúvidas</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#agendar" class="btn btn-primary">Agendar consulta</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> Vagas abertas para esta semana</span>
+      <h1>Cuidar do seu sorriso não precisa <span class="grad-text">tomar o seu dia inteiro.</span></h1>
+      <p class="lead">Agende sua consulta em menos de 2 minutos, escolha o horário que cabe na sua rotina e seja atendido por dentistas que explicam cada etapa do tratamento antes de começar.</p>
+      <div class="hero-actions">
+        <a href="#agendar" class="btn btn-primary">Escolher horário disponível</a>
+        <a href="#servicos" class="link-inline">Ver especialidades ↓</a>
+      </div>
+      <div class="hero-trust">
+        <div>
+          <div class="stars">★★★★★</div>
+          <strong>4,9 de avaliação</strong>
+          <small>Google Avaliações · 312 pacientes</small>
+        </div>
+        <div>
+          <strong>+15 convênios</strong>
+          <small>aceitos na unidade Centro</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="appointment-card" aria-label="Simulação de agendamento de consulta">
+      <div class="apt-head">
+        <p>Novo agendamento</p>
+        <span class="tag">encaixe hoje</span>
+      </div>
+      <div class="apt-service">Limpeza + avaliação</div>
+
+      <div class="apt-days">
+        <div class="apt-day"><span>Qui</span><strong>07</strong></div>
+        <div class="apt-day active"><span>Sex</span><strong>08</strong></div>
+        <div class="apt-day"><span>Sáb</span><strong>09</strong></div>
+        <div class="apt-day"><span>Seg</span><strong>11</strong></div>
+      </div>
+
+      <div class="apt-times">
+        <div class="apt-time">09:00</div>
+        <div class="apt-time selected">14:30</div>
+        <div class="apt-time">17:15</div>
+      </div>
+
+      <a href="#agendar" class="btn btn-primary apt-card-cta">Confirmar horário</a>
+    </div>
+  </div>
+</section>
+
+<div class="trustbar">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/></svg>
+      <span>Biossegurança auditada mensalmente</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.3-9.1C1.3 8.4 3 5 6.4 5c1.8 0 3.2 1 3.6 2.4C10.4 6 11.8 5 13.6 5 17 5 18.7 8.4 17.3 11.9 15 16.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span>Atendimento humanizado, sem pressa</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 10h18M5 6h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>Parcelamento em até 6x</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span>Encaixes de urgência no mesmo dia</span>
+    </div>
+  </div>
+</div>
+
+<section class="services" id="servicos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Especialidades</span>
+      <h2>Um plano de tratamento pensado para o seu caso, não um pacote fechado.</h2>
+      <p>Cada atendimento começa com uma avaliação completa. A partir dela, montamos um plano com prioridades claras — o que precisa ser resolvido agora e o que pode esperar.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8 12l3 3 5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Limpeza e prevenção</h3>
+        <p>Profilaxia, remoção de tártaro e orientação de higiene sob medida para seu histórico.</p>
+        <span class="price-tag">a partir de R$ 120</span>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 5-3 8.5-7 9-4-.5-7-4-7-9V7l7-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>Ortodontia</h3>
+        <p>Aparelhos fixos e alinhadores transparentes, com acompanhamento mensal incluso.</p>
+        <span class="price-tag">planos a partir de R$ 189/mês</span>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M4 8l8-4 8 4M4 16l8 4 8-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Clareamento</h3>
+        <p>Protocolo a laser em consultório ou moldeira personalizada para uso em casa.</p>
+        <span class="price-tag">a partir de R$ 450</span>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c4-3.5 7-7.2 7-11.2A7 7 0 0 0 5 9.8C5 13.8 8 17.5 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <h3>Implantes</h3>
+        <p>Planejamento guiado por tomografia 3D, do enxerto à coroa final.</p>
+        <span class="price-tag">avaliação gratuita</span>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 19c-3-1-5-4-5-8a8 8 0 0 1 16 0c0 4-2 7-5 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg></div>
+        <h3>Odontopediatria</h3>
+        <p>Consultório adaptado para a criançada perder o medo do dentista de vez.</p>
+        <span class="price-tag">acompanhamento semestral</span>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>Urgência odontológica</h3>
+        <p>Dor aguda, trauma ou fratura: encaixe prioritário mesmo sem consulta marcada.</p>
+        <span class="price-tag">atendimento no mesmo dia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap why">
+    <div class="why-media">
+      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop" alt="Consultório odontológico moderno, claro e organizado">
+      <div class="floater">
+        <span class="num">9</span>
+        <span class="txt">anos cuidando de sorrisos no centro de Barretos</span>
+      </div>
+    </div>
+    <div>
+      <span class="section-eyebrow">Por que os pacientes ficam</span>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(26px,3vw,36px);font-weight:600;color:var(--blue-deep);line-height:1.2;margin-bottom:34px;">Menos cadeira de espera, mais clareza sobre o próprio tratamento.</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <span class="idx">01</span>
+          <div>
+            <h4>Agenda sem gargalo</h4>
+            <p>Horários reais disponíveis online — o que você vê na tela é o que existe na agenda da clínica.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="idx">02</span>
+          <div>
+            <h4>Orçamento fechado antes de começar</h4>
+            <p>Você aprova o plano de tratamento e o valor total antes de qualquer procedimento ser iniciado.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="idx">03</span>
+          <div>
+            <h4>Um dentista, do início ao fim</h4>
+            <p>O profissional que faz sua avaliação é o mesmo que conduz o tratamento até a alta.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="jornada">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Sua jornada</span>
+      <h2>Da dúvida ao sorriso resolvido, em quatro etapas.</h2>
+    </div>
+    <div class="process-track">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <h4>Você agenda</h4>
+        <p>Escolhe dia e horário direto na página, sem precisar ligar durante o expediente.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <h4>Avaliação completa</h4>
+        <p>Raio-x, exame clínico e conversa sobre suas prioridades e orçamento disponível.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <h4>Plano aprovado por você</h4>
+        <p>Você recebe as etapas, prazos e valores antes de autorizar qualquer procedimento.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <h4>Tratamento e retorno</h4>
+        <p>Acompanhamento até a alta, com lembretes automáticos das próximas sessões.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Pacientes</span>
+      <h2>O que muda quando o agendamento é simples</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Marquei um encaixe de urgência num domingo à noite e fui atendida na segunda de manhã. Nunca tinha visto uma clínica responder tão rápido."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">M</div>
+          <div><strong>Marina T.</strong><span>paciente desde 2022</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Gostei de saber o valor total do tratamento de canal antes de começar. Nenhuma surpresa na hora de pagar."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">R</div>
+          <div><strong>Rodrigo A.</strong><span>tratamento de canal</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Meu filho tinha pavor de dentista. Aqui ele saiu pedindo pra voltar. A equipe de odontopediatria é outro nível."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">C</div>
+          <div><strong>Camila S.</strong><span>mãe de paciente, 6 anos</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="duvidas">
+  <div class="wrap">
+    <div class="section-head" style="margin-left:auto;margin-right:auto;text-align:center;">
+      <span class="section-eyebrow">Dúvidas frequentes</span>
+      <h2>Antes de marcar, responde isso aqui</h2>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary>Preciso levar algum exame para a primeira consulta? <span class="plus">+</span></summary>
+        <p>Não é obrigatório. Se você já tiver raio-x ou tomografia recentes, pode trazer — isso agiliza a avaliação. Caso contrário, os exames necessários são feitos na própria clínica.</p>
+      </details>
+      <details>
+        <summary>Vocês atendem por convênio odontológico? <span class="plus">+</span></summary>
+        <p>Sim, trabalhamos com os principais convênios da região. Ao confirmar seu horário, você pode informar o convênio e a recepção já verifica a cobertura antes da consulta.</p>
+      </details>
+      <details>
+        <summary>E se eu tiver uma dor forte fora do horário comercial? <span class="plus">+</span></summary>
+        <p>Casos de urgência têm prioridade na agenda do dia seguinte. Envie uma mensagem descrevendo o quadro e a equipe organiza o primeiro encaixe disponível.</p>
+      </details>
+      <details>
+        <summary>Posso remarcar minha consulta se precisar? <span class="plus">+</span></summary>
+        <p>Pode, sem custo, desde que avise com pelo menos 4 horas de antecedência. Basta responder o lembrete que você recebe um dia antes do atendimento.</p>
+      </details>
+      <details>
+        <summary>Tem estacionamento perto da clínica? <span class="plus">+</span></summary>
+        <p>Sim, há vagas na própria rua e um estacionamento conveniado a menos de 100 metros, com desconto para pacientes.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" id="agendar">
+  <div class="wrap">
+    <h2>Sua próxima consulta pode ser<br>ainda esta semana.</h2>
+    <p>Escolha o horário, confirme seus dados e pronto — sem ligação, sem espera na linha.</p>
+    <a href="#" class="btn btn-primary">Ver horários disponíveis</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="foot-logo">Vitalle Odontologia</span>
+        <p class="foot-desc">Clínica odontológica no centro de Barretos, com atendimento particular e por convênio, de segunda a sábado.</p>
+      </div>
+      <div>
+        <h5>Navegação</h5>
+        <ul>
+          <li><a href="#servicos">Especialidades</a></li>
+          <li><a href="#sobre">Sobre a clínica</a></li>
+          <li><a href="#jornada">Como funciona</a></li>
+          <li><a href="#duvidas">Dúvidas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="tel:+551732220000">(17) 3222-0000</a></li>
+          <li><a href="mailto:contato@vitalleodonto.com.br">contato@vitalleodonto.com.br</a></li>
+          <li>Seg a sáb · 8h às 19h</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Endereço</h5>
+        <p style="font-size:13.5px;margin-bottom:14px;">Rua 21, nº 1300 — Centro<br>Barretos — SP, 14780-000<br>a 2 quadras da Catedral</p>
+        <div class="foot-map">
+          <iframe loading="lazy" src="https://www.google.com/maps?q=Centro,+Barretos+-+SP&output=embed" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Vitalle Odontologia. Todos os direitos reservados.</span>
+      <span>Projeto conceitual de portfólio</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Interações leves apenas de UI (sem envio de dados) — troca do dia/horário selecionado no card do hero
+  document.querySelectorAll('.apt-day').forEach(function(el){
+    el.addEventListener('click', function(){
+      document.querySelectorAll('.apt-day').forEach(function(d){ d.classList.remove('active'); });
+      el.classList.add('active');
+    });
+  });
+  document.querySelectorAll('.apt-time').forEach(function(el){
+    el.addEventListener('click', function(){
+      document.querySelectorAll('.apt-time').forEach(function(t){ t.classList.remove('selected'); });
+      el.classList.add('selected');
+    });
+  });
+</script>
+
+</body>
+</html>
